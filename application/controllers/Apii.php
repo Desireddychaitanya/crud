@@ -11,6 +11,10 @@ class Api extends RestController {
         // Construct the parent class
         parent::__construct();
     }
+    // public function index()
+    // {
+    //     $this->load->view('next');
+    // }
 
     public function users_get()
     {

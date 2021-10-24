@@ -16,16 +16,22 @@
   </head>
   <body>
     <h1 style="text-align: center;">enter notes</h1>
-<div class="container">
+    <?php 
+   $query = $this->db->query("select * from users")->result_array();
+   print_r($query);
+   foreach($query as $row)
+   {
+     
 
-<?php echo form_open('notecontroller/editcontroller') ?>
-    <div class="input-group">
-   <textarea class="form-control" aria-label="With textarea" rows="10" name="textarea"  ><?php echo $query[0]['textarea']; ?></textarea>
-</div>
-<input type="hidden" name="idd" value="<?php echo $id?>">
-<input type="submit" name=" submit">
-<?php echo form_close() ?>
-</div>
+     echo '<li><a href="http://localhost/codeigniter/Welcome?id='.$row['id'].'">'.$row['name'].'</a></li>';
+     echo $_GET['id'];
+      $query = $this->db->query("select * from users where id < '".$row['id']."' ")->result_array();
+   print_r($query);
+
+   }
+
+    ?>
+
 
   </body>
 </html>

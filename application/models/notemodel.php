@@ -30,8 +30,12 @@ public function  editmodel($id,$note)
 		echo "updated sucessfuly";
 
 }
-public function deletemodel()
+public function deletemodel($id)
 {
+	// print_r($query);
+	$this->db->where('sn',$id);
+	$this->db->delete('notes');
+		echo "deleted sucessfuly";
 
 }
 

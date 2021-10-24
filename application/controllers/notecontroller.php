@@ -62,19 +62,19 @@ class notecontroller extends CI_Controller
 		// $query= $this->db->query("select * from notes where sn=".$id)->result_array();
 		$note = trim($this->input->post('textarea'));
 		// print_r($id);
-		print_r($note);
-		echo "controller";
+		// print_r($note);
+		// echo "controller";
 		$id = ($this->input->post('idd'));
-		print_r($id);
-		echo "end";
+		// print_r($id);
+		// echo "end";
 
 		$this->notemodel->editmodel($id,$note);
 
 	}
 	public function deletecontroller($id)
 	{
-		$query= $this->db->query("select * from notes where sn=".$id)->result_array();
-		$this->notemodel->deletemodel($id,$query);
+		// $query= $this->db->query("select * from notes where sn=".$id)->result_array();
+		$this->notemodel->deletemodel($id);
 
 
 	}
